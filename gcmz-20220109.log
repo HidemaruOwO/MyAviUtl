@@ -1,0 +1,6 @@
+IDropTarget::DragEnter でエラーが発生しました。
+(reported at 2022-01-09 02:28:04 on droptarget.c:791 DragEnter())
+ドロップすべきファイルがないため処理を中断しました。
+(error code: 00:0x00000008)
+  droptarget.c:781 DragEnter()
+================================

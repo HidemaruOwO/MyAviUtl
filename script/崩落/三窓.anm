@@ -1,0 +1,9 @@
+--track0:サイズ,1,1000,700,0.1
+--track1:縦横比,-100,100,600,0.1
+--track2:距離,0,1000,400,0.1
+
+obj.effect("マスク","X",obj.track2,"サイズ",obj.track0,"縦横比",obj.track1,"マスクの反転",1)
+
+obj.effect("マスク","サイズ",obj.track0,"縦横比",obj.track1,"マスクの反転",1)
+
+obj.effect("マスク","X",obj.track2*-1,"サイズ",obj.track0,"縦横比",obj.track1,"マスクの反転",1)

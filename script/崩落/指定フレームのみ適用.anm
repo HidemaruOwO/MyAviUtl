@@ -1,0 +1,47 @@
+--[[
+指定したフレームだけに適用します
+	方法
+	・0 移動
+	・1 回転
+	・2 拡大
+	種類
+	・0 X
+	・1 Y
+	・2 Z (方法が「拡大」の時のみ拡大率)
+]]
+
+--track0:フレーム,0,100,0,1
+--track1:変化方法,0,2,2,1
+--track2:変化種類,0,2,2,1
+--track3:変化量,0,1000,512,0.01
+
+if obj.frame==obj.track0 then
+	--移動
+	if obj.track1==0 then
+		if obj.track2==0 then
+			obj.ox=obj.ox+obj.track3
+		elseif obj.track2==1 then
+			obj.oy=obj.oy+obj.track3
+		elseif obj.track2==2 then
+			obj.oz=obj.oz+obj.track3
+		end
+	--回転
+	elseif obj.track1==1 then
+		if obj.track2==0 then
+			obj.rx=obj.rx+obj.track3
+		elseif obj.track2==1 then
+			obj.ry=obj.ry+obj.track3
+		elseif obj.track2==2 then
+			obj.rz=obj.rz+obj.track3
+		end
+	--拡大
+	elseif obj.track1==2 then
+		if obj.track2==0 then
+			obj.effect("拡大率","X",obj.track3)
+		elseif obj.track2==1 then
+			obj.effect("拡大率","Y",obj.track3)
+		elseif obj.track2==2 then
+			obj.zoom=obj.track3/100
+		end
+	end
+end

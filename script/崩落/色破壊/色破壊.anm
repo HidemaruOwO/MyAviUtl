@@ -1,0 +1,10 @@
+--track0:”j‰ó1,1,255,1,1
+--track1:”j‰ó2,1,255,0,1
+
+require("ColorDestruction")
+
+data,width,height=obj.getpixeldata()
+
+ColorDestruction.hakai(data, width, height, obj.track0, obj.track1)
+
+obj.putpixeldata(data)

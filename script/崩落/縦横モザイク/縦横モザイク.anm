@@ -1,0 +1,7 @@
+--track0:Xサイズ,1,200,12,1
+--track1:Yサイズ,1,200,12,1
+
+local JuoMosaic=require("JuoMosaic")
+local data,w,h=obj.getpixeldata()
+JuoMosaic.juo_mosaic(data,w,h,obj.track0,obj.track1)
+obj.putpixeldata(data)

@@ -1,0 +1,13 @@
+--track0:サイズX,1,100,8,1
+--track1:サイズY,1,100,8,1
+--track2:方向,0,3,1,1
+--track3:確率[%],0,100,50,1
+--dialog:時間で変化/chk,change_with_time=0;色を破壊/chk,broke_color=1;複製/chk,color_copy=1;データ損失/chk,data_loss=1;破壊1[1-255],broke1=32;破壊2[1-255],broke2=255;コマ落ち[1-100],drop_frame=1;シード,seed=1;
+
+local hakai=require("Hakai")
+
+data,w,h=obj.getpixeldata()
+
+Hakai.hakai(data, w, h, obj.track0, obj.track1, obj.track2, obj.track3, change_with_time, broke_color, color_copy, data_loss, broke1, broke2, drop_frame, obj.frame, seed)
+
+obj.putpixeldata(data)

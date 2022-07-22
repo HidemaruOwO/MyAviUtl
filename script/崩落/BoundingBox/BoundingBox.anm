@@ -1,0 +1,8 @@
+--track0:しきい値,0,255,128,1
+--track1:透明度,0,255,255,1
+--dialog:色/col,local col=0x000000;透明度を2値化/chk,local binari=0;ボックスのみ/chk,local only=0;
+	local BoundingBox = require("BoundingBox")
+	local data,w,h=obj.getpixeldata()
+	local r,g,b = RGB(col)
+	BoundingBox.bounding_box(data,w,h,obj.track0,obj.track1,binari,only,r,g,b)
+	obj.putpixeldata(data)

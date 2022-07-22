@@ -1,0 +1,24 @@
+--track0:移動,0,1000,0,0.1
+--track1:回転,0,180,0,0.01
+--track2:ズレ,0,100,100,0.1
+--track3:方向,1,4,3,1
+--dialog:シード,local seed=0;
+
+local zure = 100-obj.track2
+
+--移動
+if obj.track3==1 then
+	obj.oy = obj.oy-obj.track0*(obj.rand(zure,100,seed,0)/100)
+elseif obj.track3==2 then
+	obj.ox = obj.ox+obj.track0*(obj.rand(zure,100,seed,0)/100)
+elseif obj.track3==3 then
+	obj.oy = obj.oy+obj.track0*(obj.rand(zure,100,seed,0)/100)
+elseif obj.track3==4 then
+	obj.ox = obj.ox-obj.track0*(obj.rand(zure,100,seed,0)/100)
+end
+
+--回転
+obj.rz = obj.rz+obj.track1*(obj.rand(zure,100,seed,1)/100)
+if obj.rand(0,100,seed,2)<50 then
+	obj.rz=obj.rz*-1
+end

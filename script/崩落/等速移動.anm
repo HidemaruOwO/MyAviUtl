@@ -1,0 +1,13 @@
+--track0:X,-2000,2000,0,0.1
+--track1:Y,-2000,2000,0,0.1
+--track2:Z,-2000,2000,0,0.1
+--track3:‰ñ“],-360,360,0,0.01
+--dialog:Šg‘å—¦,zoom=100
+
+obj.ox = obj.ox + obj.track0 * obj.frame
+obj.oy = obj.oy + obj.track1 * obj.frame
+obj.oz = obj.oz + obj.track2 * obj.frame
+
+obj.rz = obj.rz + obj.track3 * obj.frame
+
+obj.zoom = obj.zoom + ( zoom - 100 ) / 100 * obj.frame
